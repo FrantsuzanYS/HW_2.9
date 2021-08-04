@@ -10,25 +10,47 @@ import Spring
 class ViewController: UIViewController {
 
     @IBOutlet var animationView: SpringView!
+    @IBOutlet var nameAnimationOnView: UILabel!
+    @IBOutlet var startAnimationButton: SpringButton!
+    
+    let animations = Animation.getAnimations()
+    var currentModel: Animation!
+    var futureModel: Animation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        currentModel = animations.first
+        futureModel = animations.last
+        
+        setTitles()
     }
 
     @IBAction func runAnimation(_ sender: SpringButton) {
-       // let interator: AnyIterator<Self> = AnyIterator {
-           // let result = Self(rawValue: caseIndex)
-            //caseIndex += 1
-            //return result
-        //}
+        animationView.animation = currentModel.preset
+        animationView.curve = currentModel.curve
+        animationView.delay = currentModel.delay
+        animationView.force = currentModel.force
+        animationView.duration = currentModel.duration
         
-        //animationView.animation = "pop"
-        //animationView.curve = "easeInOut"
-        //animationView.force = 2
-        //animationView.duration = 1
-        //animationView.delay = 0.3
+        animationView.animate()
         
-        //animationView.animate()
+        currentModel = futureModel
+        futureModel = animations.randomElement()
+        
+        setTitles()
+    }
+    
+    private func setTitles() {
+        nameAnimationOnView.text = """
+            Preset: \(currentModel.preset) \n
+            Curve: \(currentModel.curve) \n
+            Delay: \(round(currentModel.delay * 100)/100) \n
+            Duration: \(round(currentModel.duration)/100) \n
+            Force: \(round(currentModel.force)/100) \n
+"""
+        
+        startAnimationButton.setTitle(futureModel.preset, for: .normal)
     }
 }
 

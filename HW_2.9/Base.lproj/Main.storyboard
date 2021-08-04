@@ -17,18 +17,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zlf-Da-gys" customClass="SpringView" customModule="Spring">
-                                <rect key="frame" x="87" y="104" width="240" height="128"/>
+                                <rect key="frame" x="30" y="104" width="354" height="200"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Core Animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBQ-TN-Q6O">
-                                        <rect key="frame" x="61.5" y="53.5" width="117" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Core Animation" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBQ-TN-Q6O">
+                                        <rect key="frame" x="124.5" y="91" width="105.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="C7F-YG-fHA"/>
+                                    <constraint firstAttribute="height" constant="200" id="06d-f5-Zwl"/>
                                     <constraint firstItem="SBQ-TN-Q6O" firstAttribute="centerY" secondItem="Zlf-Da-gys" secondAttribute="centerY" id="EVD-FK-eRn"/>
                                     <constraint firstItem="SBQ-TN-Q6O" firstAttribute="centerX" secondItem="Zlf-Da-gys" secondAttribute="centerX" id="o9q-Uh-GMq"/>
                                 </constraints>
@@ -39,7 +39,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaL-K6-p0n" customClass="SpringButton" customModule="Spring">
-                                <rect key="frame" x="87" y="620" width="240" height="30"/>
+                                <rect key="frame" x="30" y="620" width="354" height="30"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <state key="normal" title="Run Animation">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,14 +59,16 @@
                         <constraints>
                             <constraint firstItem="JaL-K6-p0n" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4C8-KT-rXu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JaL-K6-p0n" secondAttribute="bottom" multiplier="1.2" constant="82" id="4nu-o4-ms3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zlf-Da-gys" secondAttribute="trailing" constant="87" id="UJF-xh-imb"/>
+                            <constraint firstItem="Zlf-Da-gys" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="SCQ-cT-e4J"/>
                             <constraint firstItem="Zlf-Da-gys" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="cGw-4M-RFn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zlf-Da-gys" secondAttribute="trailing" constant="30" id="h9l-aK-Ehf"/>
                             <constraint firstItem="JaL-K6-p0n" firstAttribute="width" secondItem="Zlf-Da-gys" secondAttribute="width" id="xzt-Qc-To6"/>
-                            <constraint firstItem="Zlf-Da-gys" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="yXX-OI-s9o"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="animationView" destination="Zlf-Da-gys" id="clo-6b-oIn"/>
+                        <outlet property="nameAnimationOnView" destination="SBQ-TN-Q6O" id="7kd-gL-b6U"/>
+                        <outlet property="startAnimationButton" destination="JaL-K6-p0n" id="Qxp-Qh-H7H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
